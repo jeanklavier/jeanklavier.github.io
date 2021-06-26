@@ -24,7 +24,7 @@
          var chart = am4core.create("chartdiv", am4charts.XYChart);
          
          // Set up data source
-         chart.dataSource.url = "https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-160/sample_data_serial.csv";
+         chart.dataSource.url = "/data/data.csv";
          chart.dataSource.parser = new am4core.CSVParser();
          chart.dataSource.parser.options.useColumnNames = true;
          
