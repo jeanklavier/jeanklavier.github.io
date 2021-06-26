@@ -30,7 +30,8 @@
          
          // Create axes
          var categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
-         categoryAxis.dataFields.category = "actualizado";
+         categoryAxis.dataFields.category = "fecha";
+         categoryAxis.dataFields.category = "hora";
          
          // Create value axis
          var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
@@ -46,7 +47,8 @@
          
          var series2 = chart.series.push(new am4charts.LineSeries());
          series2.dataFields.valueY = "sinservicio";
-         series2.dataFields.categoryX = "actualizado";
+         series2.dataFields.categoryX = "fecha";
+         series2.dataFields.categoryX = "hora";
          series2.name = "Clientes Sin Servicio";
          series2.strokeWidth = 3;
          series2.tensionX = 0.7;
