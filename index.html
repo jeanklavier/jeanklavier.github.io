@@ -11,7 +11,18 @@
     am4charts.PieChart
     );
 
-    
+// Adding a legend to a Pie chart
+chart.legend = new am4charts.Legend();
+
+// Adding a series to a Pie chart
+// The following will automatically create an instance of `PieSeries`,
+// attach it to `PieChart` and return the reference, so that we can
+// configure it
+let series = chart.series.create();
+
+// Setting up data fields in Pie series
+series.dataFields.value = "visits";
+series.dataFields.category = "country";    
     </script>
   </head>   
 
