@@ -1,70 +1,54 @@
-<html>
-   <head>
- 
-   </head>
-   <body>
-      <!--Div that will hold the pie chart-->
-      <script src="//cdn.amcharts.com/lib/4/core.js"></script>
-      <script src="//cdn.amcharts.com/lib/4/charts.js"></script>
-      <div id="chartdiv" </div>
-      <script>
-         /**
-          * ---------------------------------------
-          * This demo was created using amCharts 4.
-          *
-          * For more information visit:
-          * https://www.amcharts.com/
-          *
-          * Documentation is available at:
-          * https://www.amcharts.com/docs/v4/
-          * ---------------------------------------
-          */
-         
-         // Create chart instance
-         var chart = am4core.create("chartdiv", am4charts.XYChart);
-         
-         // Set up data source
-         chart.dataSource.url = "/data/data.csv";
-         chart.dataSource.parser = new am4core.CSVParser();
-         chart.dataSource.parser.options.useColumnNames = true;
-         
-         // Create axes
-         var categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
-         categoryAxis.dataFields.category = "Fecha";
-         categoryAxis.dataFields.category = "Hora";
-         
-         // Create value axis
-         var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
-         
-         // Create series
-        //  var series1 = chart.series.push(new am4charts.LineSeries());
-        //  series1.dataFields.valueY = "region";
-        //  series1.dataFields.categoryX = "actualizado";
-        //  series1.name = "Region";
-        //  series1.strokeWidth = 3;
-        //  series1.tensionX = 0.7;
-        //  series1.bullets.push(new am4charts.CircleBullet());
-         
-         var series2 = chart.series.push(new am4charts.LineSeries());
-         series2.dataFields.valueY = "Sin Servicio";
-         series2.dataFields.categoryX = "Fecha";
-         series2.dataFields.categoryX = "Hora";
-         series2.name = "Clientes Sin Servicio";
-         series2.strokeWidth = 3;
-         series2.tensionX = 0.7;
-         series2.bullets.push(new am4charts.CircleBullet());
-         
-        //  var series3 = chart.series.push(new am4charts.LineSeries());
-        //  series3.dataFields.valueY = "bicycles";
-        //  series3.dataFields.categoryX = "actualizado";
-        //  series3.name = "Bicycles";
-        //  series3.strokeWidth = 3;
-        //  series3.tensionX = 0.7;
-        //  series3.bullets.push(new am4charts.CircleBullet());
-         
-         // Add legend
-         chart.legend = new am4charts.Legend();
-             
-      </script>  
-   </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chart</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.4.0/dist/chart.min.js"></script>
+    
+</head>
+<body>
+    
+    <canvas id="myChart" width="400" height="400"></canvas>
+    <script>
+    var ctx = document.getElementById('myChart').getContext('2d');
+    var myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+            datasets: [{
+                label: '# of Votes',
+                data: [12, 19, 3, 5, 2, 3],
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(153, 102, 255, 0.2)',
+                    'rgba(255, 159, 64, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+    </script>
+
+</body>
 </html>
