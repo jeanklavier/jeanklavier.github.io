@@ -22,7 +22,7 @@
             const data = await response.text();
 
             const table = data.split('\n').slice(1);
-            table.array.forEach(row => {
+            table.forEach(row => {
                 const columns = row.split(',')
                 const region = columns[2];
                 const sinservicio = columns[5];
