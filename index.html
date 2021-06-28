@@ -21,11 +21,11 @@
             const response = await fetch('data/data.csv');
             const data = await response.text
 
-            const table = data.split('\n');
-            rows.array.forEach(elt => {
-                const row = elt.split(',')
-                const region = row[2];
-                const sinservicio = row [5];
+            const table = data.split('\n').slice(1);
+            table.array.forEach(row => {
+                const columns = row.split(',')
+                const region = column[2];
+                const sinservicio = column[5];
                 console.log(region, sinservicio);
                 
             });
