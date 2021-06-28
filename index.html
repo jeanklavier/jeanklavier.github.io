@@ -23,8 +23,8 @@
 
             const table = data.split('\n').slice(1);
             table.forEach(row => {
-                const columns = row.split(',')
-                const region = columns[2];
+                const columns = row.split('|')
+                const region = columns[1];
                 const sinservicio = columns[5];
                 console.log(region, sinservicio);
                 
