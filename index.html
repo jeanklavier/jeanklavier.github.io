@@ -23,10 +23,11 @@
 
             const table = data.split('\n').slice(1);
             table.forEach(row => {
-                const columns = row.split('|')
+                const columns = row.split('|');
+                const actualizado = columns[0];
                 const region = columns[1];
-                const sinservicio = columns[5];
-                console.log(region, sinservicio);
+                const sinservicio = columns[4];
+                console.log(actualizado, region, sinservicio);
                 
             });
         }
