@@ -13,7 +13,27 @@
 
 <body>
 
-    <canvas id="myChart" width="200" height="100"></canvas>
+    <script>
+
+        getData();
+
+        async function getData() { 
+            const response = await fetch('data/data.csv');
+            const data = await response.text
+
+            const table = data.split('\n').slice(1);
+            rows.array.forEach(elt => {
+                const row = elt.split(',')
+                const region = row[2];
+                const sinservicio = row [5];
+                console.log(region, sinservicio);
+                
+            });
+        }
+
+    </script>
+
+    <canvas id="myChart" width="300" height="150"></canvas>
     <script>
         const labels = [
             'January',
