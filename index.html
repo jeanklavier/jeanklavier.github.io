@@ -21,7 +21,7 @@
             const response = await fetch('data/data.csv');
             const data = await response.text
 
-            const table = data.split('\n').slice(1);
+            const table = data.split('\n');
             rows.array.forEach(elt => {
                 const row = elt.split(',')
                 const region = row[2];
