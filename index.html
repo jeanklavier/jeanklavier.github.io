@@ -19,9 +19,9 @@
 
         async function getData() { 
             const response = await fetch('data/data.csv');
-            const data = await response.text
+            const data = await response.text;
 
-            const table = data.toString.split('\n').slice(1);
+            const table = data.split('\n').slice(1);
             table.array.forEach(row => {
                 const columns = row.split(',')
                 const region = columns[2];
